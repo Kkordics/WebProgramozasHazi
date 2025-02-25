@@ -1,4 +1,6 @@
 # WebProgramoz-sH-zi
-Készítői: 
-- Krecsmarik Zalán: Neptun kód
+
+Készítői:
+
+- Krecsmarik Zalán: B1XTCZ
 - Kordics Kristóf: ZE27GW
