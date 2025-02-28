@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu-hu">
+    <head>
+        <title>WebProgHazi</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body onload="getLocation()">
+        <header>
+            <h1 id="cim">Web-programozás-1 Előadás Házi feladat</h1>
+        </header>
+
+        <nav>
+            <div class="menu">
+                <li class="menu_pont selected_menu"><a href="index.html">Home</a></li>
+                <li class="menu_pont"><a href="base.html">Asztal foglalás</a></li>
+                <li class="menu_pont"><a href="base.html">Étlap</a></li>
+                <li class="menu_pont"><a href="base.html">Elérhetőségek</a></li>
+                <li class="menu_pont"><a href="base.html">Rólunk</a></li>
+            </div>
+        </nav>
+
+        <div class="maincontent">
+            <div class="szallitas">
+                <div class="location-container">
+                    <div id="map"></div>
+                </div>
+                <div class="delivery-time">
+                    <h3>Kiszállítási idő:</h3>
+                    <p id="delivery-time">Kiszállítási idő kiszámítása...</p>
+                </div>        
+            </div>
+            <div class="etelek">
+                <div class="etelsor">
+                    <div class="etel">
+                        <div class="kajakep">
+                            <img class="kajaimg" src="images/gombalevesjo.png" alt="Étel 1">
+                        </div>
+                        <div class="kajaleiras">
+                            <h3>Hús leves</h3>
+                            <p>Ár: 2190 Ft</p>
+                        </div>
+                    </div>
+                    <div class="etel">
+                        <div class="kajakep">
+                            <img class="kajaimg" src="images/zoldsegleves.png" alt="Étel 1">
+                        </div>
+                        <div class="kajaleiras">
+                            <h3>Zöldség leves</h3>
+                            <p>Ár: 1990 Ft</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="etelsor">
+                    <div class="etel">
+                        <div class="kajakep">
+                            <img class="kajaimg" src="images/lasagne.png" alt="Étel 1">
+                        </div>
+                        <div class="kajaleiras">
+                            <h3>Lasagne</h3>
+                            <p>Ár: 2490 Ft</p>
+                        </div>
+                    </div>
+                    <div class="etel">
+                        <div class="kajakep">
+                            <img class="kajaimg" src="images/rantotthus.png" alt="Étel 1">
+                        </div>
+                        <div class="kajaleiras">
+                            <h3>Rántott hús petrezselymes krumplival</h3>
+                            <p>Ár: 2990 Ft</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- További ételek -->
+            </div>
+        </div>
+        
+        <aside>
+        </aside>
+
+        <footer>
+            <p id="mi">Krecsmarik Zalán: B1XTCZ & Kordics Kristóf: ZE27GW</p>
+        </footer>
+    </body>
+</html>
