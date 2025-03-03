@@ -94,3 +94,19 @@ function showPosition(position) {
 function toRad(deg) {
     return deg * (Math.PI / 180);
 }
+/*chartJS*/
+window.onload = function() {
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
+            datasets: [{
+                label: 'Látogatottság',
+                data: [280,252,302,310,423,481,468,521],
+                backgroundColor: ['green']
+            }]
+        }
+    });
+};
