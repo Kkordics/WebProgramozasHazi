@@ -94,6 +94,20 @@ function showPosition(position) {
 function toRad(deg) {
     return deg * (Math.PI / 180);
 }
+
+
+/*
+Hibát írk ki minden oldalnál kivéve a Rólunk olalon mert minden oldalon betöleti 
+elvileg így lehet specifikusan megadni hogy csak melyik oldalon töltsön be
+
+window.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === "/your-page.html") {
+        console.log("Your specific page has loaded!");
+        // Run your custom function here
+    }
+});
+
+*/
 /*chartJS*/
 window.onload = function() {
     const ctx = document.getElementById('myChart').getContext('2d');
