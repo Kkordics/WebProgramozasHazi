@@ -152,3 +152,44 @@ function allowDrop(ev){
     ev.preventDefault();
 }
 
+function asztalRend(){
+    if(asztalEll()){
+        var foglalt_szekek = 0;
+        for(let i = 1; i <= 48;i++){
+            if(document.getElementById("szek"+i.toString()).querySelector("p").innerHTML != ""){
+                foglalt_szekek++;
+            }
+        }
+        if(foglalt_szekek > 0){
+            document.getElementById("rendeles_visszajelzes").style.visibility = "visible";
+            document.getElementById("a_rend_hiba").innerHTML = "";
+        }else{
+            document.getElementById("a_rend_hiba").innerHTML = "*Nincs kiválasztott ülésrend!";
+        }
+       
+    }else{
+        document.getElementById("rendeles_visszajelzes").style.visibility = "hidden";
+    }
+}
+function asztalEll(){
+    var hiba = document.getElementById("a_rend_hiba");
+    //kitöltött mezők ell
+    if(document.getElementById("a_rend_nev").value == ""){
+        hiba.innerHTML = "*Nincs minden mező kitöltve!";
+        return false;
+    }
+    if(document.getElementById("a_rend_email").value == ""){
+        hiba.innerHTML = "*Nincs minden mező kitöltve!";
+        return false;
+    }
+    if(document.getElementById("a_rend_tel").value == ""){
+        hiba.innerHTML = "*Nincs minden mező kitöltve!";
+        return false;
+    }
+    if(!document.getElementById("a_rend_date").value){
+        hiba.innerHTML = "*Nincs minden mező kitöltve!";
+        return false;
+    }
+    hiba.innerHTML = "";
+    return true;
+}

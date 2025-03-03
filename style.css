@@ -354,6 +354,7 @@ canvas{
     backdrop-filter: blur(3px);
     height: 15vh;
     box-shadow: 1px 10px 10px black;
+   
 }
 #vendeg_szam{
     -webkit-appearance: none;
@@ -390,6 +391,8 @@ canvas{
 }
 .vendeg:hover{
     cursor:grab;
+    transform: scale(1.1);
+    
 }
 .vendeg_input{
    
@@ -460,4 +463,90 @@ canvas{
     display: block;
     width: 10vh;
     fill: white;
+}
+
+.a_rend_i{
+   
+    padding: 0.2rem;
+    margin-left: 1rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    border-color: #27ae60;
+    border-width: 2px;
+    border-style: solid;
+    color: white;
+    margin-top: 1vh;
+}
+.a_rend_i:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+#a_rend{
+    
+    display: inline-block;
+    position: absolute;
+    margin-left: 10%;
+}
+#a_rend_gomb{
+    height: 5vh;
+    background-color: #27ae60;
+    
+    font-weight: 600;
+    
+}
+#a_rend_hiba{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    color: red;
+    margin-left: 1rem;
+    margin-top: 2vh;
+}
+#utmutato{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    color: white;
+    margin-left: 1rem;
+    margin-top: 2vh;
+}
+#rendeles_visszajelzes{
+    backdrop-filter: blur(4px);
+    position: fixed;
+    width: 100vw;  
+    height: 100vh; 
+    z-index: 10;
+    top: 0;
+    cursor:default;
+    visibility:hidden;
+}
+#background{
+    display: block;
+    width: 50vh;
+    height: 50vh;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    border-radius: 10%;
+
+}
+#koszonet{
+
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    color: #27ae60;
+    
+}
+
+#vissza{
+    display: block;
+    text-align: center;
+}
+#vissza:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
 }
