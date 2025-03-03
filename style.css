@@ -21,7 +21,7 @@ header{
     background-color: white;
     display: flex;
     justify-content: center;
-    list-style: none; /* Optional: remove bullet points if using ul */
+    list-style: none;
     padding-right: 40%;
     margin: 0; 
     background-image: linear-gradient(to right, #576574, #1d1d1d,#1d1d1d);
@@ -195,8 +195,8 @@ a:visited, a:link, a:active,a{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 1000px;
-    height: 900px; /* Fix magasság */
-    box-sizing: border-box; /* Padding és border beleszámít a magasságba */
+    height: 900px;
+    box-sizing: border-box;
 }
 
 #map {
@@ -218,7 +218,7 @@ a:visited, a:link, a:active,a{
 
 .maincontent {
     display: flex;
-    align-items: flex-end; /* A div-ek alja egy vonalban lesz */
+    align-items: flex-end;
 }
 
 /*kaják*/
@@ -233,8 +233,8 @@ a:visited, a:link, a:active,a{
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Függőleges középre igazítás */
-    align-items: center; /* Vízszintes középre igazítás */
+    justify-content: center;
+    align-items: center;
 }
 
 .etel {
@@ -246,7 +246,7 @@ a:visited, a:link, a:active,a{
     margin: 20px;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Elemek szélessége */
+    width: 30%;
 }
 
 .etel:hover{
@@ -274,12 +274,72 @@ a:visited, a:link, a:active,a{
 .etelsor {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; /* Elemek közötti térköz */
-    align-items: center; /* Elemek függőleges középre igazítása */
-    width: 100%; /* Teljes szélesség */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 .kajaimg{
     height: 200px;
+}
+/*rolunk*/
+canvas{
+    background-color: #ff9f43;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+.rolunkcontent{
+    background-image: linear-gradient(to right, #576574, #1d1d1d,#1d1d1d);
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.jobboldal{
+    margin:auto;
+}
+.baloldal{
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    justify-content: space-around;
+}
+.kartya{
+    background-color: white;
+    margin: 10px;
+    border-radius: 8px;
+    padding:5px;
+}
+.szakacs1kep{
+    height: 300px;
+}
+.sor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.szakacs2kep{
+    height: 330px;
+}
+.sefkep{
+    height: 330px;
+}
+.munkasleiras{
+    border-top: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin:auto;
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #carpet{
     background-image: url("images/Carpet.png");
