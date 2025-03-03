@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hu-hu">
+    <head>
+        <title>WebProgHazi</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 id="cim">Web-programozás-1 Előadás Házi feladat</h1>
+            
+        </header>
+
+        <nav>
+            <div class="menu">
+                <li class="menu_pont selected_menu"><a href="index.html">Home</a></li>
+                <li class="menu_pont"><a href="asztal_fog.html">Asztal foglalás</a></li>
+                <li class="menu_pont"><a href="base.html">Étlap</a></li>
+                <li class="menu_pont"><a href="base.html">Elérhetőségek</a></li>
+                <li class="menu_pont"><a href="base.html">Rólunk</a></li>
+            </div>
+        </nav>
+        <div class="content">
+           <div id="carpet">
+            <div id="vendekeg">
+                
+                <div id="vendeg1" draggable="true" ondragstart="drag(event)" class="vendeg"><textarea class="vendeg_input" wrap="soft" rows="2" cols="2" >Vendég 1</textarea></div>
+                <img id="kuka" ondrop="removeDrop(event)" ondragover="allowDrop(event)" src="images/kuka.svg" alt="kuka">
+                <input type="text" placeholder="Név">
+                <input type="email" placeholder="példa@gmail.com">
+                <input type="tel" placeholder="+36">
+                <input type="date">
+            </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek1" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek2"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek3"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek4"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek5"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek6"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek7" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek8"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek9"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek10"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek11"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek12"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek13" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek14"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek15"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek16"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek17"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek18"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek19" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek20"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek21"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek22"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek23"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek24"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek25" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek26"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek27"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek28"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek29"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek30"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek31" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek32"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek33"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek34"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek35"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek36"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek37" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek38"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek39"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek40"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek41"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek42"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="asztal">
+
+                    <table class="szekek">
+                        <tr class="sor1">
+                            <td></td>
+                            <td><div id="szek43" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)" class="szek"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sor2">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek44"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek45"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor3">
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek46"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                            <td> <div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true"  ondragover="allowDrop(event)"  id="szek47"><p class="szek_nev"></p></div></td>
+                        </tr>
+                        <tr class="sor4">
+                            <td></td>
+                            <td><div class="szek" ondrop="drop(event)" ondragstart="drag(event)" draggable="true" ondragover="allowDrop(event)"  id="szek48"><p class="szek_nev"></p></div></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+           </div>
+           
+        </div>
+        <aside>
+            
+        </aside>
+        <footer>
+            <p id="mi">Krecsmarik Zalán: B1XTCZ & Kordics Kristóf: ZE27GW</p>
+        </footer>
+    </body>
+</html>

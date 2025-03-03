@@ -94,3 +94,45 @@ function showPosition(position) {
 function toRad(deg) {
     return deg * (Math.PI / 180);
 }
+
+function drag(ev){
+    ev.dataTransfer.setData("text", ev.target.id);
+    
+}
+
+var vendegek_szama = 0;
+function drop(ev){
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+   
+    try{
+        var name = document.getElementById(data).querySelector("textarea").value;
+        vendegek_szama++;
+        document.getElementById(data).querySelector("textarea").value = "Vendég "+(vendegek_szama+1).toString()
+        document.getElementById(data).id = "vendeg"+vendegek_szama.toString();
+    }catch{
+        var name = document.getElementById(data).querySelector("p").innerHTML;
+        document.getElementById(data).querySelector("p").innerHTML = "";
+    }
+    
+
+    //console.log(name);
+    ev.currentTarget.querySelector("p").innerHTML = name;
+    //console.log(ev.currentTarget.querySelector("p").innerHTML);
+    
+    //ev.target.appendChild(document.getElementById(data));
+}
+function removeDrop(ev){
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    try{
+        document.getElementById(data).querySelector("p").innerHTML = "";   
+        
+    }catch{
+
+    }
+}
+function allowDrop(ev){
+    ev.preventDefault();
+}
+

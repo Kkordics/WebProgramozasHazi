@@ -86,6 +86,7 @@ header{
     position: absolute;
     top: 20vh;
     right: 50vh;
+    
 }
 #szoveg{
     
@@ -147,7 +148,7 @@ aside{
     right: 0vh;
     height: 50vh;
     box-shadow: -0.5vh 0px 5px 5px rgba(0,0,0,0.5);
-    
+    position: fixed;
 }
 .contacts{
     display: inline;
@@ -248,6 +249,11 @@ a:visited, a:link, a:active,a{
     width: 30%; /* Elemek szélessége */
 }
 
+.etel:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
 .etel img {
     width: 100%;
     border-radius: 10px;
@@ -274,4 +280,124 @@ a:visited, a:link, a:active,a{
 }
 .kajaimg{
     height: 200px;
+}
+#carpet{
+    background-image: url("images/Carpet.png");
+    background-size: 30vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+}
+#vendekeg{
+    background-color: rgba(100, 100, 100, 0.5);
+    backdrop-filter: blur(3px);
+    height: 15vh;
+    box-shadow: 1px 10px 10px black;
+}
+#vendeg_szam{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: auto;
+    display: block;
+    margin-right:auto ;
+    padding: 0;
+    margin-top: 0;
+    width: 71vw;
+    height: 3vh;
+    background-color: rgba(10, 10, 10, 0.5);
+    border-radius: 10px;
+}
+#vendeg_szam::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #3498db;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+.vendeg{
+    display: inline-block;
+    
+    width: 10vh;
+    height: 10vh;
+    
+    
+    margin-top: 2vh;
+    margin-left: 4vh;
+    background-image: url("images/person.png") ;
+    background-size: 5rem;
+    
+}
+.vendeg:hover{
+    cursor:grab;
+}
+.vendeg_input{
+   
+   width: 90%;
+   background-color: rgba(0, 0, 0, 0);
+   height: 50%;
+   resize: none;
+   scrollbar-width: none;
+   border: none;
+   color: white;
+   
+}
+.asztal{
+    background-image: url("images/Table.png");
+    filter: drop-shadow(0px 10px 10px rgb(0,0,0));
+    height: 30vh;
+    width: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10vh;
+    display: inline-block;
+}
+.szek{
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 4vh;
+    height: 4vh;
+    
+    padding: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.szek:hover{
+    cursor: grab;
+}
+.sor1{
+    
+    padding: 0;
+    height: 5vh;
+}
+.szekek{
+    
+    width: 100%;
+    height: 100%;
+    
+}
+.szek_nev{
+    color: white;
+    display: block;
+    text-wrap: nowrap;
+    text-align: center;
+    
+}
+#kuka{
+    display: inline-block;
+    position: absolute;
+    width: 10vh;
+    
+    margin-top: 2vh;
+    margin-left: 3vh;
+}
+#kuka:hover{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+#bejarat{
+    display: block;
+    width: 10vh;
+    fill: white;
 }
