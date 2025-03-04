@@ -6,7 +6,7 @@ Készítői:
 - Kordics Kristóf: ZE27GW
 
 #3. Feladat
-- [ ] Web Storage
+- [x] Web Storage
 - [ ] Web Workers
 - [ ] Server-Sent Events
 - [x] Geolocation API
