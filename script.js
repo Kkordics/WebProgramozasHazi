@@ -145,12 +145,13 @@ function drop(ev){
         document.getElementById(data).querySelector("p").innerHTML = "";
     }
     
-
+    
     //console.log(name);
     ev.currentTarget.querySelector("p").innerHTML = name;
     //console.log(ev.currentTarget.querySelector("p").innerHTML);
     
     //ev.target.appendChild(document.getElementById(data));
+    storeCurrecntState();
 }
 function removeDrop(ev){
     ev.preventDefault();
@@ -175,8 +176,10 @@ function asztalRend(){
             }
         }
         if(foglalt_szekek > 0){
+           
             document.getElementById("rendeles_visszajelzes").style.visibility = "visible";
             document.getElementById("a_rend_hiba").innerHTML = "";
+            localStorage.clear();
         }else{
             document.getElementById("a_rend_hiba").innerHTML = "*Nincs kiválasztott ülésrend!";
         }
@@ -205,5 +208,49 @@ function asztalEll(){
         return false;
     }
     hiba.innerHTML = "";
+    storeCurrecntState();
     return true;
 }
+
+
+//Local storage, elementi az adott állapotát az oldal értékainek
+function storeCurrecntState(){
+    if (typeof(Storage) !== "undefined"){
+        //input mezők
+        localStorage.setItem("a_rend_nev", document.getElementById("a_rend_nev").value);
+        localStorage.setItem("a_rend_email", document.getElementById("a_rend_email").value);
+        localStorage.setItem("a_rend_tel", document.getElementById("a_rend_tel").value);
+        localStorage.setItem("a_rend_date", document.getElementById("a_rend_date").value);
+        
+        //Székek
+        for(let i = 1;i <=48;i++){
+            if(document.getElementById("szek"+i.toString()).querySelector("p").innerHTML != ""){
+                localStorage.setItem("szek"+i.toString(), document.getElementById("szek"+i.toString()).querySelector("p").innerHTML);
+                console.log("asd");
+            }
+        }
+    }else{
+        console.error("A böngésző nem támogatja a local storage funkciót!");
+    }
+}
+
+function restoreCurrentSTate(){
+        document.getElementById("a_rend_nev").value = localStorage.getItem("a_rend_nev");
+       document.getElementById("a_rend_email").value = localStorage.getItem("a_rend_email");
+       document.getElementById("a_rend_tel").value = localStorage.getItem("a_rend_tel");
+       document.getElementById("a_rend_date").value = localStorage.getItem("a_rend_date");
+
+       for(let i = 1;i <=48;i++){
+            document.getElementById("szek"+i.toString()).querySelector("p").innerHTML = localStorage.getItem("szek"+i.toString());
+            //console.log(i);
+        }
+};
+
+
+window.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === "/asztal_fog.html") {
+       restoreCurrentSTate();
+       
+    }
+});
+
