@@ -254,3 +254,23 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+function menuAnimation(){
+    const circle = document.getElementById("login_circle");
+    circle.classList.add("animate_login_circle");
+    
+    setTimeout(() => {
+        circle.style.transform = "scale(2)";
+        document.getElementById("login").style.visibility = "visible";
+      }, 300);
+}
+function resetAnimation(){
+    document.getElementById("login").style.visibility = "hidden";
+    document.getElementById("login_circle").classList.remove("animate_login_circle");
+    document.getElementById("login_circle").style.transform = "scale(0)";
+}
+function login(){
+    if(document.getElementById("login_text").value == "admin" && document.getElementById("login_pass").value == "admin"){
+        console.log("Tudja a jelszót");
+        window.open("admin.html","_parent");
+    }
+}

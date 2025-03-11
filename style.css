@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 html{
     padding: 0;
@@ -25,6 +26,7 @@ header{
     padding-right: 40%;
     margin: 0; 
     background-image: linear-gradient(to right, #576574, #1d1d1d,#1d1d1d);
+    
 }
 .menu_pont{
     
@@ -118,7 +120,7 @@ header{
     margin-bottom: 2vh;
     font-weight: 700;
 }
-#menu_gomb{
+#etlap_gomb{
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     color: white;
@@ -134,7 +136,7 @@ header{
     border-width: 1mm;
     transition: 0.3s;
 }
-#menu_gomb:hover{
+#etlap_gomb:hover{
     
     transform: scale(1.1);
 }
@@ -149,6 +151,18 @@ aside{
     height: 50vh;
     box-shadow: -0.5vh 0px 5px 5px rgba(0,0,0,0.5);
     position: fixed;
+}
+.icons{
+    display: block;
+    height: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70%;
+}
+.icons:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
 }
 .contacts{
     display: inline;
@@ -549,4 +563,128 @@ canvas{
 #vissza:hover{
     transform: scale(1.1);
     transition: 0.2s;
+}
+#menu_gomb{
+    display: inline;
+    height: 5%;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+    filter: brightness(0) invert(1);
+}
+#menu_gomb:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    
+}
+
+#login_circle{
+    border-radius: 100%;
+    position: absolute;
+    
+    height: 40vh;
+    width: 40vh;
+    top: -20vh;
+    right: -20vh;
+    background-color: #2ecc71;
+    z-index: 2;
+    transform: scale(0);
+    transition: 0.3s;
+}
+#login_circle:hover{
+    transform: scale(2);
+}
+.animate_login_circle{
+    animation-name: a_l_c;
+    animation-duration: 0.3s;
+}
+@keyframes a_l_c {
+    from {transform: scale(0);}
+    to {transform: scale(2);}
+}
+#login{
+    position: absolute;
+    display: block;
+    
+    width: 15%;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    height: fit-content;
+    visibility: hidden;
+}
+.login_input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    background-color: #1d1d1d;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    padding: 0.3rem;
+    padding-left: 0.6rem;
+
+}
+.login_input:focus{
+    transform: scale(1.05);
+}
+#login_label{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    margin-top: 1vh;
+}
+#login_f_pass{
+    display: inline;
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1vh;
+    
+}
+#login_reg{
+    display: inline;
+    color: darkgreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0;
+    margin-top: 1vh;
+    text-align: right;
+    margin-left: 5vh;
+
+}
+
+#login_button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #1d1d1d;
+    border: none;
+    border-radius: 30px;
+    padding: 0.3rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+}
+#login_button:hover{
+    transition: 0.2s;
+    border-color: white;
+    border-style: solid;
+    transform: scale(1.1);
+    cursor: pointer;
 }
