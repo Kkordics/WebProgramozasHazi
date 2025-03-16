@@ -113,7 +113,7 @@ window.onload = function() {
     const ctx = document.getElementById('myChart').getContext('2d');
 
     new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
             datasets: [{
