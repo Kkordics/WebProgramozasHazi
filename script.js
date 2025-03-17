@@ -96,34 +96,49 @@ function toRad(deg) {
 }
 
 
-/*
-Hibát írk ki minden oldalnál kivéve a Rólunk olalon mert minden oldalon betöleti 
-elvileg így lehet specifikusan megadni hogy csak melyik oldalon töltsön be
+
+
 
 window.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname === "/your-page.html") {
-        console.log("Your specific page has loaded!");
-        // Run your custom function here
+    if (window.location.pathname === "/rolunk.html") {
+       /*chartJS*/
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
+                datasets: [{
+                    label: 'Látogatottság',
+                    data: [280,252,302,310,423,481,468,521],
+                    backgroundColor: ['green']
+                }]
+            }
+        });
+        //---
+
+        if (typeof(EventSource) !== "undefined") {
+            // Create a new EventSource instance
+            const eventSource = new EventSource("traffic.php");
+
+            // Listen for messages from the server
+            eventSource.onmessage = function(event) {
+                //Mai Látogatottság: 
+                document.getElementById("traffic").textContent = "Mai Látogatottság: "+event.data.toString();
+            };
+
+            
+            eventSource.onerror = function() {
+                document.getElementById("traffic").textContent = "Probléma akadt a SSE api-val!";
+                document.getElementById("traffic").style.color = "Red";
+            };
+        } else {
+            document.getElementById("traffic").textContent = "A böngésző nem támogatja a SSE api-t!";
+        }
     }
 });
 
-*/
-/*chartJS*/
-window.onload = function() {
-    const ctx = document.getElementById('myChart').getContext('2d');
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
-            datasets: [{
-                label: 'Látogatottság',
-                data: [280,252,302,310,423,481,468,521],
-                backgroundColor: ['green']
-            }]
-        }
-    });
-};
 
 function drag(ev){
     ev.dataTransfer.setData("text", ev.target.id);
@@ -274,3 +289,30 @@ function login(){
         window.open("admin.html","_parent");
     }
 }
+
+var webWorker;
+window.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname === "/admin.html") {
+        if(typeof(Worker) !== "undefined") {
+            if(typeof(w) == "undefined") {
+              w = new Worker("countdown.js");
+            }
+            w.onmessage = function(event) {
+             
+              if (event.data.done) {
+                window.alert("A munka menet lejárt! \nVissza irányítás a fő menüre.");
+                window.open("index.html","_parent");
+                // Handle the end of the countdown (e.g., display a message)
+                } else {
+                    const { minutes, seconds } = event.data;
+                    console.log(`Time remaining: ${minutes}m ${seconds}s`);
+                    document.getElementById("work_time").innerHTML = "0:"+minutes.toString()+":"+seconds.toString();
+                    // Update your UI with the remaining time
+                }
+            };
+          } else {
+            document.getElementById("work_time").innerHTML = "Sorry, your browser does not support Web Workers...";
+          }
+    }
+});
+
