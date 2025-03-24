@@ -6,6 +6,7 @@ Készítői:
 - Kordics Kristóf: ZE27GW
 
 #3. Feladat
+
 - [x] Web Storage
 - [x] Web Workers
 - [x] Server-Sent Events
@@ -15,9 +16,11 @@ Készítői:
 - [x] SVG
 
 #4. Feladat
+
 - [x] ChartJS
 
 #5. Feladat (Ajax menü)
+
 - [ ] ajax.html, ajax.js
 - [ ] Read funkció
 - [ ] height értékekről: összeg, átlag, legnagyobb
@@ -27,12 +30,15 @@ Készítői:
 - [ ] Create, Update, Delete műveletek sikerességéről adjunk visszajelzést
 
 #6. Feladat (OOJS)
+
 - [ ] OOJS menü
 
 #7. Feladat
-- [ ] React
+
+- [x] React
 
 #8. Feladat
+
 - [ ] Hostolni kell a weboldalt és megostani a felhsználót meg jelszót a tanárral
 - [x] Github
 - [ ] PDF 15 oldal felhasználói dokumentáció
