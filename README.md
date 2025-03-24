@@ -7,8 +7,8 @@ Készítői:
 
 #3. Feladat
 - [x] Web Storage
-- [ ] Web Workers
-- [ ] Server-Sent Events
+- [x] Web Workers
+- [x] Server-Sent Events
 - [x] Geolocation API
 - [x] Drag and drop API
 - [x] Canvas
