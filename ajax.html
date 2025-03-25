@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu-hu">
+    <head>
+        <title>Hazi</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+        <script src="ajax.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 id="cim">Web-programozás-1 Előadás Házi feladat</h1>
+            
+        </header>
+
+        <nav>
+            <div class="menu">
+                <li class="menu_pont selected_menu"><a href="index.html">Home</a></li>
+                <li class="menu_pont"><a href="asztal_fog.html">Asztal foglalás</a></li>
+                <li class="menu_pont"><a href="rendeles.html">Étlap</a></li>
+                <li class="menu_pont"><a href="base.html">Elérhetőségek</a></li>
+                <li class="menu_pont"><a href="rolunk.html">Rólunk</a></li>
+                <img id="menu_gomb" onmouseover="menuAnimation()" src="images/menu.svg">
+                <div id="login_circle"></div> 
+                <div id="login"  onmouseleave="resetAnimation()">
+                    <p id="login_label">Bejelenkezés</p>
+                    <input class="login_input" id="login_text" type="text" placeholder="név/email">
+                    <input class="login_input" id="login_pass" type="password" placeholder="*****" >
+                    <a id="login_f_pass">Elfelejtett jelszó</a>
+                    <a id="login_reg">Regisztráció</a>
+                    <button id="login_button" onclick="login()">Bejelentkezés</button>
+                </div>
+            </div>
+        </nav>
+        <div style="display: flex;" class="content">
+            
+            <div id="input_fields" >
+
+
+                    <p class="crude">Rendelés felvétele</p>
+                <div class="edit" id="edit_create">
+                    <p class="edit_label">Név * max 30</p>
+                    <input type="text"class="edit_input" id="curude_c_name" placeholder="Sanyi" maxlength="30">
+
+                    <p class="edit_label">Város * max 30</p>
+                    <input type="text" class="edit_input" id="curude_c_city" placeholder="Hajdúböszörmény" maxlength="30">
+
+                    <p class="edit_label">Telefonszám * max 30</p>
+                    <input type="text" class="edit_input" id="curude_c_phone" placeholder="+363011111111" maxlength="30">
+
+                    <button id="create_button" onclick="create()">Rendelés hozzáadása</button>
+                </div>
+                <p class="crude">Rendelés változatatása</p>
+                <div class="edit" id="edit_update">
+                    <p class="edit_label">ID</p>
+                    <input type="text"class="edit_input" id="crud_u_id" placeholder="10" maxlength="30">
+                    <button id="create_button" onclick="getDataForId()">Adatok bemásolása</button>
+                    <p class="edit_label">Név * max 30</p>
+                    <input type="text"class="edit_input" id="crud_u_name" placeholder="Sanyi" maxlength="30">
+
+                    <p class="edit_label">Város * max 30</p>
+                    <input type="text" class="edit_input" id="crud_u_city" placeholder="Hajdúböszörmény" maxlength="30">
+
+                    <p class="edit_label">Telefonszám * max 30</p>
+                    <input type="text" class="edit_input" id="crud_u_phone" placeholder="+363011111111" maxlength="30">
+
+                    <button id="create_button" onclick="update()">Rendelés Változatatása</button>
+                </div>
+                <p class="crude">Rendelés törlése</p>
+                <div class="edit" id="edit_delete">
+                    <p class="edit_label">ID</p>
+                    <input type="text"class="edit_input" id="crud_d_id" placeholder="10" maxlength="30">   
+
+                    <button  id="create_button" onclick="deleteF()">Rendelés Törlése</button>
+                </div>
+            
+            </div>
+            <div id="crud_table">
+                
+            </div>
+        </div>
+        <aside>
+            <a href="rolunk.html"><img class="icons" src="images/facebook.svg"></a>
+            <a href="rolunk.html"><img class="icons" src="images/instagram.svg"></a>
+            <a href="rolunk.html"><img class="icons" src="images/tiktok.svg"></a>
+        </aside>
+        <footer>
+            <p id="mi">Krecsmarik Zalán: B1XTCZ & Kordics Kristóf: ZE27GW</p>
+        </footer>
+    </body>
+</html>
