@@ -30,7 +30,7 @@ Készítői:
 
 #6. Feladat (OOJS)
 
-- [ ] OOJS menü
+- [x] OOJS menü
 
 #7. Feladat
 
