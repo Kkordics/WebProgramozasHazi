@@ -21,13 +21,12 @@ Készítői:
 
 #5. Feladat (Ajax menü)
 
-- [ ] ajax.html, ajax.js
-- [ ] Read funkció
-- [ ] height értékekről: összeg, átlag, legnagyobb
-- [ ] Create és Update
-- [ ] Ellenőrzés js fájlban
-- [ ] Update beviteli mező stb...
-- [ ] Create, Update, Delete műveletek sikerességéről adjunk visszajelzést
+- [x] ajax.html, ajax.js
+- [x] Read funkció
+- [x] Create és Update
+- [x] Ellenőrzés js fájlban
+- [x] Update beviteli mező stb...
+- [x] Create, Update, Delete műveletek sikerességéről adjunk visszajelzést
 
 #6. Feladat (OOJS)
 
