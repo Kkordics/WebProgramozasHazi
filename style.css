@@ -356,6 +356,13 @@ canvas{
     justify-content: center;
     align-items: center;
 }
+#myChart {
+    max-width: 700px;
+    max-height: 700px;
+    width: 100%;
+    height: auto;
+}
+
 #carpet{
     background-image: url("images/Carpet.png");
     background-size: 30vh;

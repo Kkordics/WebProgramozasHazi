@@ -99,44 +99,61 @@ function toRad(deg) {
 
 
 
-window.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname === "/rolunk.html") {
-       /*chartJS*/
-        const ctx = document.getElementById('myChart').getContext('2d');
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM betöltődött");
+    
+    if (window.location.pathname.includes("rolunk.html")) {
+        console.log("Rólunk oldal aktív");
 
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
-                datasets: [{
-                    label: 'Látogatottság',
-                    data: [280,252,302,310,423,481,468,521],
-                    backgroundColor: ['green']
-                }]
-            }
-        });
-        //---
+        const chartElement = document.getElementById('myChart');
+        if (chartElement) {
+            console.log("Canvas elem létezik, inicializáljuk a Chart.js-t");
+            const ctx = chartElement.getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Szeptember','Október','November','December','Január', 'Február', 'Március', 'Május'],
+                    datasets: [{
+                        label: 'Látogatottság',
+                        data: [280,252,302,310,423,481,468,521],
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0, 128, 0, 0.2)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        } else {
+            console.error("HIBA: Az #myChart elem nem található!");
+        }
 
+        // SSE betöltése
         if (typeof(EventSource) !== "undefined") {
-            // Create a new EventSource instance
+            console.log("SSE támogatott");
             const eventSource = new EventSource("traffic.php");
 
-            // Listen for messages from the server
             eventSource.onmessage = function(event) {
-                //Mai Látogatottság: 
-                document.getElementById("traffic").textContent = "Mai Látogatottság: "+event.data.toString();
+                console.log("Új adat érkezett:", event.data);
+                document.getElementById("traffic").textContent = "Mai Látogatottság: " + event.data.toString();
             };
 
-            
             eventSource.onerror = function() {
+                console.error("HIBA: SSE nem működik!");
                 document.getElementById("traffic").textContent = "Probléma akadt a SSE api-val!";
                 document.getElementById("traffic").style.color = "Red";
+                eventSource.close();
             };
         } else {
+            console.warn("SSE nem támogatott ebben a böngészőben");
             document.getElementById("traffic").textContent = "A böngésző nem támogatja a SSE api-t!";
         }
     }
 });
+
 
 
 
