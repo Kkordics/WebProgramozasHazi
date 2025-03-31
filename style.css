@@ -65,7 +65,9 @@ header{
     background-color: #ff9f43;
     border-radius: 100%;
     right: -5vh;
-   position: absolute;
+    position: absolute;
+    
+    
 }
 .right_cover{
     background-color: #ff9f43;
@@ -136,6 +138,7 @@ header{
     border-radius: 20px;
     border-width: 1mm;
     transition: 0.3s;
+    cursor: pointer;
 }
 #etlap_gomb:hover{
     

@@ -322,7 +322,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 // Handle the end of the countdown (e.g., display a message)
                 } else {
                     const { minutes, seconds } = event.data;
-                    console.log(`Time remaining: ${minutes}m ${seconds}s`);
+                    //console.log(`Time remaining: ${minutes}m ${seconds}s`);
                     document.getElementById("work_time").innerHTML = "0:"+minutes.toString()+":"+seconds.toString();
                     // Update your UI with the remaining time
                 }
