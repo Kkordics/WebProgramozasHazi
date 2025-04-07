@@ -96,18 +96,14 @@ function toRad(deg) {
 }
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM betöltődött");
     
     if (window.location.pathname.includes("rolunk.html")) {
-        console.log("Rólunk oldal aktív");
+        //console.log("Rólunk oldal aktív");
 
         const chartElement = document.getElementById('myChart');
         if (chartElement) {
-            console.log("Canvas elem létezik, inicializáljuk a Chart.js-t");
+            //console.log("Canvas elem létezik, inicializáljuk a Chart.js-t");
             const ctx = chartElement.getContext('2d');
             
             new Chart(ctx, {
@@ -141,12 +137,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("traffic").textContent = "Mai Látogatottság: " + event.data.toString();
             };
 
-            eventSource.onerror = function() {
+            /*eventSource.onerror = function() {
                 console.error("HIBA: SSE nem működik!");
                 document.getElementById("traffic").textContent = "Probléma akadt a SSE api-val!";
                 document.getElementById("traffic").style.color = "Red";
                 eventSource.close();
-            };
+            };*/
         } else {
             console.warn("SSE nem támogatott ebben a böngészőben");
             document.getElementById("traffic").textContent = "A böngésző nem támogatja a SSE api-t!";
