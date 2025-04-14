@@ -129,11 +129,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // SSE betöltése
         if (typeof(EventSource) !== "undefined") {
-            console.log("SSE támogatott");
+            //console.log("SSE támogatott");
             const eventSource = new EventSource("traffic.php");
 
             eventSource.onmessage = function(event) {
-                console.log("Új adat érkezett:", event.data);
+                //console.log("Új adat érkezett:", event.data);
                 document.getElementById("traffic").textContent = "Mai Látogatottság: " + event.data.toString();
             };
 
@@ -186,7 +186,7 @@ function removeDrop(ev){
     var data = ev.dataTransfer.getData("text");
     try{
         document.getElementById(data).querySelector("p").innerHTML = "";   
-        
+        storeCurrecntState();
     }catch{
 
     }
@@ -244,6 +244,7 @@ function asztalEll(){
 //Local storage, elementi az adott állapotát az oldal értékainek
 function storeCurrecntState(){
     if (typeof(Storage) !== "undefined"){
+        localStorage.clear();
         //input mezők
         localStorage.setItem("a_rend_nev", document.getElementById("a_rend_nev").value);
         localStorage.setItem("a_rend_email", document.getElementById("a_rend_email").value);
@@ -254,7 +255,7 @@ function storeCurrecntState(){
         for(let i = 1;i <=48;i++){
             if(document.getElementById("szek"+i.toString()).querySelector("p").innerHTML != ""){
                 localStorage.setItem("szek"+i.toString(), document.getElementById("szek"+i.toString()).querySelector("p").innerHTML);
-                console.log("asd");
+                //console.log("asd");
             }
         }
     }else{
@@ -298,7 +299,7 @@ function resetAnimation(){
 }
 function login(){
     if(document.getElementById("login_text").value == "admin" && document.getElementById("login_pass").value == "admin"){
-        console.log("Tudja a jelszót");
+        //console.log("Tudja a jelszót");
         window.open("admin.html","_parent");
     }
 }
