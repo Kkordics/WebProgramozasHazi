@@ -327,6 +327,153 @@ window.addEventListener("DOMContentLoaded", function () {
           } else {
             document.getElementById("work_time").innerHTML = "Sorry, your browser does not support Web Workers...";
           }
+
+        //crud load
+        loadTable();
     }
 });
 
+function loadTable(){
+    const table = this.document.getElementById("crud_table")
+    
+    
+
+    rendelesek.forEach(rendeles => {
+        table.innerHTML += rendeles.describe();
+    });
+}
+
+function reloadTable(){
+    const rows = document.querySelectorAll("#crud_table tr");
+    let i = 0;
+    rows.forEach((row, index) => {
+        if(index >0){
+            i = index-1;
+            
+            if(i<rendelesek.length){
+                rendelesek.id = i;
+                row.innerHTML = rendelesek[i].describe();
+            }else{//törli az utolsó sort ha kell
+                if((rows.length-1)>rendelesek.length){
+                
+                    row.remove();
+                }
+            }
+        }
+        
+      });
+      
+}
+
+class Rendeles{
+    constructor(id, name, food, date, debt, disabled) {
+        this.id = id;
+        this.name = name;
+        this.food = food;
+        this.date = date;
+        this.debt = debt;
+        this.disabled = disabled;
+    }
+    describe() {
+        if(this.disabled){
+            return `<tr>
+                    <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value=${this.id}></td>
+                    <td><input type="text" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value="${this.name}"></td>
+                    <td><input type="text" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value="${this.food}"></td>
+                    <td><input type="datetime-local" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value=${this.date}></td>
+                    <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value=${this.debt}></td>
+                    <td><button value=${this.id} onclick="table_removeRow(this)">Törlés</button></td>
+                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkeztés</button></td>
+                </tr>`;
+        }else{
+            return `<tr>
+                    <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value=${this.id}></td>
+                    <td><input type="text" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value="${this.name}"></td>
+                    <td><input type="text" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value="${this.food}"></td>
+                    <td><input type="datetime-local" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value=${this.date}></td>
+                    <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value=${this.debt}></td>
+                    <td><button value=${this.id} onclick="table_removeRow(this)" >Törlés</button></td>
+                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkeztés</button></td>
+                </tr>`;
+        }
+
+        
+      }
+}
+
+let rendelesek = [
+    new Rendeles(0,"Ferenc", "Pizza", "2025-04-15T20:52", 0,false),
+    new Rendeles(1,"Sanyi", "Burger", "2025-04-15T20:53",2100, false),
+    new Rendeles(2,"Péter", "Keksz", "2025-05-15T20:53",6000, false),
+    new Rendeles(3,"Elek asd", "Rakott kell bab", "2025-05-15T20:53",0, false),
+]
+
+function table_allowEdit(button){
+    
+    rendelesek.forEach(rendeles => {
+        if(rendeles.id == button.value){
+            rendeles.disabled = true;
+        }else{
+            rendeles.disabled = false;
+        }
+    });
+    reloadTable();
+}
+function table_removeRow(button){
+    rendelesek.splice(button.value, 1);
+    reloadTable();
+}
+
+function table_change(input){
+    const inputs = document.querySelectorAll(".crud_area");
+    let i = 0;
+    let selected_inputs = [];
+    inputs.forEach((input, index) => {
+        //console.log(input.disabled);
+        if(input.disabled == false){
+            //console.log(input.value);
+            selected_inputs.push(input);
+        }
+        
+      });
+      rendelesek.forEach(rendeles => {
+        if(rendeles.disabled == true){
+            //console.log(rendeles);
+            rendeles.id = selected_inputs[0].value;
+            rendeles.name = selected_inputs[1].value;
+            rendeles.food = selected_inputs[2].value;
+            rendeles.date = selected_inputs[3].value;
+            rendeles.debt = selected_inputs[4].value;
+            return;
+        }
+    });
+}
+
+
+function table_sort(button){
+    
+    switch(button.value){
+        case "id":{
+            rendelesek.sort((a, b)=> a.id - b.id);
+            break;
+        }
+        case "name":{
+            rendelesek.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        }
+        case "food":{
+            rendelesek.sort((a, b) => a.food.localeCompare(b.food));
+            break;
+        }
+        case "date":{
+            rendelesek.sort((a, b) => new Date(a) - new Date(b));
+            break;
+        }
+        case "debt":{
+            rendelesek.sort((a, b)=> a.debt - b.debt);
+            break;
+        }
+    }
+    
+    reloadTable();
+}

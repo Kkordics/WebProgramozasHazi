@@ -38,6 +38,33 @@
            <a class="hided_webpage" href="ajax.html">Rendelések kezelése</a>
            <a class="hided_webpage" href="react-page.html">React weboldal</a>
            <a class="hided_webpage" href="OOJS/kisallat.html">OOJS alkalmazás</a>
+
+           <div id="crud">
+            <input type="text" placeholder="keresés">
+            <table id="crud_table">
+                <tr>
+                    <th><button onclick="table_sort(this)" value="id" class="sort_btn">ID</button></th>
+                    <th><button onclick="table_sort(this)" value="name" class="sort_btn">Név</button></th>
+                    <th><button onclick="table_sort(this)" value="food" class="sort_btn">Étel</button></th>
+                    <th><button onclick="table_sort(this)" value="date" class="sort_btn">Dátum</button></th>
+                    <th><button onclick="table_sort(this)" value="debt" class="sort_btn">Tartozás</button></th>
+                </tr>
+                <!--
+                <tr>
+                    <td><input type="text" class="crud_area" value="asd"></td>
+                    <td><input type="text" class="crud_area" disabled="true" value="asd"></td>
+                    <td><input type="text" class="crud_area" disabled="true" value="asd"></td>
+                    <td><input type="text" class="crud_area" disabled="true" value="asd"></td>
+                    <td><input type="text" class="crud_area" disabled="true" value="asd"></td>
+                    <td><button  >Törlés</button></td>
+                    <td><button id="tableRow_0" onclick="table_allowEdit()" >Szerkeztés</button></td>
+                </tr>
+                -->
+                    
+               
+                
+            </table>
+           </div>
         </div>
         <aside>
             <a href="rolunk.html"><img class="icons" src="images/facebook.svg"></a>

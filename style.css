@@ -797,3 +797,41 @@ canvas{
 .hided_webpage:hover{
     color: darkorange!important;
 }
+#crud_table{
+    border-collapse: collapse;
+    width: 50%;
+}
+#crud_table td,th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    
+}
+
+.sort_btn{
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    width: 100%;
+}
+.sort_btn:hover{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    
+}
+
+.crud_area{
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    height: max-content;
+    margin: 0;
+
+}
+.crud_area:disabled{
+    color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: black;
+    font-weight: 550;
+}
