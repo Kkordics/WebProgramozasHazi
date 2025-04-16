@@ -336,7 +336,7 @@ window.addEventListener("DOMContentLoaded", function () {
 function loadTable(){
     const table = this.document.getElementById("crud_table")
     
-    
+    table_clear();
 
     rendelesek.forEach(rendeles => {
         table.innerHTML += rendeles.describe();
@@ -383,7 +383,7 @@ class Rendeles{
                     <td><input type="datetime-local" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value=${this.date}></td>
                     <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area"  value=${this.debt}></td>
                     <td><button value=${this.id} onclick="table_removeRow(this)">Törlés</button></td>
-                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkeztés</button></td>
+                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkesztés</button></td>
                 </tr>`;
         }else{
             return `<tr>
@@ -393,7 +393,7 @@ class Rendeles{
                     <td><input type="datetime-local" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value=${this.date}></td>
                     <td><input type="number" minlength="5" maxlength="20" onchange="table_change(this)" class="crud_area" disabled="false" value=${this.debt}></td>
                     <td><button value=${this.id} onclick="table_removeRow(this)" >Törlés</button></td>
-                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkeztés</button></td>
+                    <td><button value=${this.id} onclick="table_allowEdit(this)" >Szerkesztés</button></td>
                 </tr>`;
         }
 
@@ -420,7 +420,15 @@ function table_allowEdit(button){
     reloadTable();
 }
 function table_removeRow(button){
-    rendelesek.splice(button.value, 1);
+
+    rendelesek.forEach((rendeles,index) => {
+        if(rendeles.id == button.value){
+           
+            rendelesek.splice(index, 1);
+        }
+    });
+
+    
     reloadTable();
 }
 
@@ -435,8 +443,8 @@ function table_change(input){
             selected_inputs.push(input);
         }
         
-      });
-      rendelesek.forEach(rendeles => {
+    });
+    rendelesek.forEach(rendeles => {
         if(rendeles.disabled == true){
             //console.log(rendeles);
             rendeles.id = selected_inputs[0].value;
@@ -476,4 +484,65 @@ function table_sort(button){
     }
     
     reloadTable();
+}
+
+function table_clear(){
+    const table = this.document.getElementById("crud_table")
+    table.innerHTML = '<tr><th><button onclick="table_sort(this)" value="id" class="sort_btn">ID</button></th><th><button onclick="table_sort(this)" value="name" class="sort_btn">Név</button></th><th><button onclick="table_sort(this)" value="food" class="sort_btn">Étel</button></th><th><button onclick="table_sort(this)" value="date" class="sort_btn">Dátum</button></th><th><button onclick="table_sort(this)" value="debt" class="sort_btn">Tartozás</button></th></tr>';
+}
+
+function table_search(value){
+    
+    if(value.value !== ""){
+        let output = [];
+        rendelesek.forEach((rendeles,index) => {
+            if([...value.value].every(char=>rendeles.id.toString().includes(char))){
+                output.push(rendeles);
+            }else if([...value.value].every(char=>rendeles.name.includes(char))){
+                output.push(rendeles);
+            }else if([...value.value].every(char=>rendeles.food.includes(char))){
+                output.push(rendeles);
+            }else if([...value.value].every(char=>rendeles.date.toString().includes(char))){
+                output.push(rendeles);
+            }else if([...value.value].every(char=>rendeles.debt.toString().includes(char))){
+                output.push(rendeles);
+            }
+        });
+        const table = this.document.getElementById("crud_table")
+        table_clear();
+        output.forEach(rendeles => {
+            table.innerHTML += rendeles.describe();
+        });
+    }else{
+        
+        loadTable();
+    }
+    
+}
+function table_add(){
+    const inputs = document.querySelectorAll(".crud_input");
+    let empty_space = 0;
+    inputs.forEach((input,index) => {
+        if(input.value === "" && index >0){
+            empty_space++;
+        }
+    });
+    
+    
+
+    if(empty_space > 1){
+        alert("Ki nem töltött mező!");
+        return;
+    }else{
+        
+        let maxId = Math.max(...rendelesek.map(r => r.id))+1;
+        const uj = new Rendeles(maxId, inputs[1].value, inputs[2].value, inputs[3].value, inputs[4].value);
+        rendelesek.push(uj);
+    }
+    loadTable();
+    inputs.forEach((input,index) => {
+        if(index >0){
+            input.value =""; 
+        }
+    });
 }

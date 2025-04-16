@@ -32,7 +32,7 @@
                 </div>
             </div>
         </nav>
-        <div class="content">
+        <div class="content" style="overflow: auto;">
             <p id="admin_oldal">Admin oldal</p>
            <p id="work_time">0:30:00</p>
            <a class="hided_webpage" href="ajax.html">Rendelések kezelése</a>
@@ -40,7 +40,21 @@
            <a class="hided_webpage" href="OOJS/kisallat.html">OOJS alkalmazás</a>
 
            <div id="crud">
-            <input type="text" placeholder="keresés">
+            <h3 id="crud_label">Leadott rendelések kezelése</h3>
+            <table id="crud_add">
+                
+                <tr>
+                    <td><input type="text" minlength="5" maxlength="20"  class="crud_input" disabled="true"  value="ID Automatikus generálás"></td>
+                    <td><input type="text" minlength="5" maxlength="20"  class="crud_input"  placeholder="Név"></td>
+                    <td><input type="text" minlength="5" maxlength="20"  class="crud_input"  placeholder="Étel"></td>
+                    <td><input type="datetime-local" minlength="5" maxlength="20"  class="crud_input"  placeholder="Dátum és idő"></td>
+                    <td><input type="number" minlength="5" maxlength="20" class="crud_input"  placeholder="Adósság"></td>
+                    <td><button onclick="table_add()" >Hozzáadás</button></td>
+                </tr>
+                
+            </table>
+
+            <input type="text" oninput="table_search(this)" placeholder="Keresés" id="crud_search">
             <table id="crud_table">
                 <tr>
                     <th><button onclick="table_sort(this)" value="id" class="sort_btn">ID</button></th>
